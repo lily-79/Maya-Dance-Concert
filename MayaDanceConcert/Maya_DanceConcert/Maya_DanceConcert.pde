@@ -7,8 +7,8 @@ int i;
 
 Kinect kinect;
 PImage depthImg;
-int minDepth =  200;
-int maxDepth = 700;
+int minDepth =  100;
+int maxDepth = 1020;
 
 void setup() {
   background(0);
