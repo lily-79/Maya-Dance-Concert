@@ -7,8 +7,8 @@ int i;
 
 Kinect kinect;
 PImage depthImg;
-int minDepth =  100;
-int maxDepth = 1020;
+int minDepth =  100; //100
+int maxDepth = 1020; //1020
 
 void setup() {
   background(0);
@@ -17,7 +17,8 @@ void setup() {
   kinect = new Kinect(this);
   kinect.initDepth();
   depthImg = new PImage(kinect.width, kinect.height);
-  scenes.add(new BasicDelayOne());
+  scenes.add(new DelayTwo()); 
+  scenes.add(new DelayOne()); 
 }
 
 void updateDepthImage()
@@ -28,7 +29,7 @@ void updateDepthImage()
     if (rawDepth[i] >= minDepth && rawDepth[i] <= maxDepth) {
       depthImg.pixels[i] = color(255);
     } else {
-      depthImg.pixels[i] = color(0,0,0,25);
+      depthImg.pixels[i] = color(0);
     }
   }
   // Draw the thresholded image
