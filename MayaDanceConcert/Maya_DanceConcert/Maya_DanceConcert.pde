@@ -46,5 +46,6 @@ void draw() {
 void keyPressed() {
   if (key=='q') {
     i+=1;
+    if (i >= scenes.size()) i = 0;
   }
 }
